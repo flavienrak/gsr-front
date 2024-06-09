@@ -89,6 +89,7 @@ body {
   scroll-behavior: smooth;
   box-sizing: border-box;
   text-overflow: ellipsis;
+  text-decoration: inherit;
   font-family: "Inter", sans-serif;
 }
 
