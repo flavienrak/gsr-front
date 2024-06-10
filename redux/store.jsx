@@ -5,6 +5,7 @@ import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 import persistSlice from "./slices/persistSlice";
 import usersSlice from "./slices/usersSlice";
 import userSlice from "./slices/userSlice";
+import produitsSlice from "./slices/produitsSlice";
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
@@ -38,6 +39,7 @@ const rootReducer = combineReducers({
   users: usersSlice,
   user: userSlice,
   persistInfos: persistSlice,
+  produits: produitsSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

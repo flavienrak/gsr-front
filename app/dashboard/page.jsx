@@ -7,3 +7,5 @@ export default function DashboardPage() {
     </>
   );
 }
+
+// https://fb.com/home/edit => /, /home, /auth, /dashboard ? /home?path=login, /home?path=register
