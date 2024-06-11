@@ -71,6 +71,7 @@ body {
 
   --dark: #151225;
   --white: #ffffff;
+  --bg-landing: rgb(9, 1, 22);
 
   --bg: hsl(240, 100%, 1%);
   --bg-1: hsl(0, 0%, 5%);
