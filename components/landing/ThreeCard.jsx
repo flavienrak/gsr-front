@@ -1,13 +1,11 @@
-import React from "react";
-import { IoIosApps, IoMdArrowDropright } from "react-icons/io";
-import { BiArrowToRight } from "react-icons/bi";
+import { IoIosApps } from "react-icons/io";
 import { CardLanding } from "./UtilsLanding";
 
 export default function ThreeCard() {
   return (
     <>
-      <div className=" w-full h-screen flex items-center justify-center bg-[var(--bg-landing)] text-white ">
-        <div className=" flex items-center justify-center gap-6">
+      <div className="w-full h-screen flex items-center justify-center text-white bg-[var(--bg)] ">
+        <div className="flex items-center justify-center gap-6">
           <CardLanding
             icon={<IoIosApps size={"3rem"} />}
             titre={"Paperspace H100s"}

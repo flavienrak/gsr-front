@@ -74,7 +74,7 @@
   transform-origin: top left;
   background: linear-gradient(
     135deg,
-    var(--purple-theme),
+    var(--primary-color),
     transparent,
     transparent
   );
@@ -87,7 +87,7 @@
   transform-origin: top left;
   background: linear-gradient(
     135deg,
-    var(--purple-theme),
+    var(--primary-color),
     transparent,
     transparent
   );
@@ -100,7 +100,7 @@
   transform-origin: top left;
   background: linear-gradient(
     135deg,
-    var(--purple-theme),
+    var(--primary-color),
     transparent,
     transparent
   );
@@ -113,7 +113,7 @@
   transform-origin: top left;
   background: linear-gradient(
     135deg,
-    var(--purple-theme),
+    var(--primary-color),
     transparent,
     transparent
   );

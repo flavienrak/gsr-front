@@ -12,6 +12,7 @@ import { loginController } from "@/lib/controllers/authController";
 import { Button, Input } from "../utils/Utils";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { FaArrowLeft } from "react-icons/fa6";
 
 export default function LogIn() {
   const { addMessage, toastStyle } = useContext(UidContext);
@@ -108,8 +109,13 @@ export default function LogIn() {
   };
 
   return (
-    <div className="flex justify-between items-center h-full w-full z-10 p-10">
+    <div className="relative flex justify-between items-center h-full w-full z-10 p-10">
       <div className="flex flex-col gap-10 h-full justify-center w-1/2 pr-8">
+        <Link href={"/"} className="absolute top-8 left-10">
+          <i className="text-[var(--primary-color)]">
+            <FaArrowLeft size={"2rem"} />
+          </i>
+        </Link>
         <h1 className="text-white font-extrabold text-8xl">
           <span className="text-8xl bgText">Se connecter </span> a votre{" "}
           <span className="text-8xl bgText">compte.</span>
