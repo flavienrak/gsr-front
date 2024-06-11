@@ -6,55 +6,46 @@
   font-family: "Inter";
   src: url("/fonts/Inter-Black.ttf");
   font-weight: 900;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-ExtraBold.ttf");
   font-weight: 800;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Bold.ttf");
   font-weight: 700;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Semibold.ttf");
   font-weight: 600;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Semibold.ttf");
   font-weight: 500;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Medium.ttf");
   font-weight: 400;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Regular.ttf");
   font-weight: 300;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Thin.ttf");
   font-weight: 200;
-  font-style: normal;
 }
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Light.ttf");
   font-weight: 100;
-  font-style: normal;
 }
 
 *,
@@ -74,6 +65,9 @@ body {
   --blue-theme: hsl(250, 100%, 50%);
   --yellow-theme: hsl(50, 100%, 50%);
   --red-theme: hsl(10, 100%, 50%);
+
+  --green: hsl(106, 100%, 50%);
+  --red: hsl(10, 100%, 50%);
 
   --dark: #151225;
   --white: #ffffff;
@@ -128,7 +122,11 @@ body {
 
 *::selection {
   background: var(--primary-color);
-  color: white;
+  color: var(--bg);
+}
+input::selection {
+  background: var(--bg);
+  color: var(--cont);
 }
 .br {
   border: 1px solid rgb(200, 200, 200);
@@ -148,12 +146,16 @@ textarea {
 
 .cadre {
   position: absolute;
-  right: -250px;
-  height: 1000px;
-  width: 1000px;
+  right: -180vh;
+  height: 250vh;
+  width: 250vh;
   background: var(--primary-color);
-  background: var(--bg-gradient);
+  /* background: var(--bg-gradient); */
   transform: rotate(45deg);
+  border-radius: 1rem;
+}
+.cadre.cadre-l {
+  left: -180vh;
 }
 .scr {
   scrollbar-width: thin;

@@ -4,6 +4,7 @@ import qs from "query-string";
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, createContext, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 export const UidContext = createContext();
 
@@ -45,6 +46,19 @@ export default function UidContextProvider({ children }) {
     setShowLogout(value);
   };
 
+  const toastStyle = {
+    style: {
+      border: "1px solid var(--primary-color)",
+      padding: "16px",
+      color: "var(--bg)",
+      background: "var(--bg-gradient)",
+    },
+    iconTheme: {
+      primary: "var(--bg)",
+      secondary: "var(--cont)",
+    },
+  };
+
   if (typeof window !== "undefined")
     return (
       <UidContext.Provider
@@ -55,12 +69,14 @@ export default function UidContextProvider({ children }) {
           isLoadingJWT,
           currentQuery,
           widthProgressBar,
+          toastStyle,
           loginOut,
           removeQueries,
           setLoadingBar,
         }}
       >
         {children}
+        <Toaster />
       </UidContext.Provider>
     );
 }
