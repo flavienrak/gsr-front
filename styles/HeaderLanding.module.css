@@ -143,3 +143,28 @@
   background: linear-gradient(135deg, var(--purple-theme), var(--blue-theme));
   transform: rotate(45deg);
 }
+.bgTitre1 {
+  color: transparent;
+  background: linear-gradient(
+    135deg,
+    rgb(64, 191, 246),
+    transparent,
+    transparent,
+    rgb(64, 191, 246),
+    transparent,
+    transparent,
+    rgb(64, 191, 246)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.25px rgb(rgb(64, 191, 246));
+  font-weight: 700;
+  animation: trans 10s linear infinite;
+}
+@keyframes trans {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position-x: -20rem;
+  }
+}

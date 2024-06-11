@@ -3,6 +3,7 @@ import Header from "./Header";
 import ThreeCard from "./ThreeCard";
 import SixCard from "./SixCard";
 import About from "./About";
+import Footer from "./Footer";
 
 export default function Landing() {
   return (
@@ -12,6 +13,7 @@ export default function Landing() {
         <ThreeCard />
         <SixCard />
         <About />
+        <Footer />
       </div>
       {/* <Link href={{ pathname: "/auth/login" }}>Se connecter</Link> <br />
       <Link href={{ pathname: "/auth/register" }}>S{"'"}inscrire</Link> */}
