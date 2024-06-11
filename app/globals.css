@@ -51,7 +51,7 @@
 *,
 html,
 body {
-  --primary-color: hsl(50, 100%, 50%);
+  --primary-color: hsl(125, 100%, 50%);
   --bg-red-5: rgba(239, 68, 68, 0.25);
   --bg-gradient: radial-gradient(
       ellipse at bottom,
@@ -61,10 +61,11 @@ body {
     radial-gradient(ellipse at top, transparent, var(--primary-color));
 
   --green-theme: hsl(125, 100%, 50%);
-  --purple-theme: hsl(275, 100%, 50%);
-  --blue-theme: hsl(250, 100%, 50%);
+  --purple-theme: hsl(267, 100%, 50%);
+  --blue-theme: hsl(202, 84%, 50%);
+  --blue-theme: hsl(215, 100%, 50%);
   --yellow-theme: hsl(50, 100%, 50%);
-  --red-theme: hsl(10, 100%, 50%);
+  --red-theme: hsl(7, 100%, 50%);
 
   --green: hsl(106, 100%, 50%);
   --red: hsl(10, 100%, 50%);
