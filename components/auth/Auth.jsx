@@ -1,5 +1,4 @@
 "use client";
-
 import LogIn from "./Login";
 import Register from "./Register";
 

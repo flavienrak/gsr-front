@@ -77,10 +77,11 @@ body {
 
   --dark: #151225;
   --white: #ffffff;
-
+  --bg-landing: #1a202c;
+  --bg-transparent: rgb(0, 0, 0, 0.15);
+  --bg-blue: #4ae;
   --bg: #f1f5f9;
   --bg-1: #ffffff;
-
   --cont: #151225;
 
   margin: 0;

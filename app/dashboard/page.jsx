@@ -1,9 +1,11 @@
 import Dashboard from "@/components/dashboard/Dashboard";
+import Navbar from "@/components/home/Navbar";
 
 export default function DashboardPage() {
   return (
     <>
       <Dashboard />
+      <Navbar pseudo="Faly" email="randriantsoafaly8@gmail.com" />
     </>
   );
 }
