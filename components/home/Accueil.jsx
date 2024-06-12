@@ -3,6 +3,9 @@
 import { fetchProduitsInfos } from "@/redux/slices/produitsSlice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Navbar from "../dashboard/Navbar";
+import Topbar from "../dashboard/Topbar";
+import ContenuAcceuil from "./ContenuAcceuil";
 
 export default function Accueil() {
   const dispatch = useDispatch();
@@ -31,8 +34,12 @@ export default function Accueil() {
 
   return (
     <>
-      <div className="bg-green-500 w-full h-40 flex justify-center items-center">
-        Home
+      <div className=" w-full h-screen bg-[var(--bg-landing)] flex  ">
+        <Navbar />
+        <div className=" w-full h-full flex flex-col">
+          <Topbar />
+          <ContenuAcceuil />
+        </div>
       </div>
     </>
   );

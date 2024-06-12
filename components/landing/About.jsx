@@ -7,6 +7,7 @@ import {
   IoLogoTwitter,
   IoMdStar,
 } from "react-icons/io";
+// import { MySwiper } from "./UtilsLanding";
 
 export default function About() {
   return (
@@ -113,6 +114,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        {/* <MySwiper /> */}
       </div>
     </>
   );

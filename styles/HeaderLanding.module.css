@@ -156,7 +156,7 @@
     rgb(64, 191, 246)
   );
   -webkit-background-clip: text;
-  -webkit-text-stroke: 0.25px rgb(rgb(64, 191, 246));
+  -webkit-text-stroke: 0.25px rgb(64, 191, 246);
   font-weight: 700;
   animation: trans 10s linear infinite;
 }

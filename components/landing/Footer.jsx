@@ -12,11 +12,11 @@ export default function Footer() {
   return (
     <>
       <div className=" w-full h-[100vh] flex flex-col justify-end     ">
-        <div className=" w-full py-4 px-[6rem] flex items-center justify-between bg-[var(--yellow-theme)] ">
+        <div className=" w-full py-2 px-[6rem] flex items-center justify-between bg-[var(--yellow-theme)] ">
           <p className=" text-xl text-white">
             Looking for a quality and affordable constructor your next project ?
           </p>
-          <button className=" uppercase bg-[var(--bg-dark)] py-2 px-8 rounded-md text-white ">
+          <button className=" uppercase bg-[var(--bg-landing)] py-1 px-8 rounded-md text-white ">
             request a quote
           </button>
         </div>
@@ -27,7 +27,7 @@ export default function Footer() {
                 className=" text-[var(--yellow-theme)]  "
                 size={"2.5rem"}
               />
-              <p className=" bgText text-3xl "> Infinity</p>
+              <p className=" text-[var(--yellow-theme)] text-3xl "> Infinity</p>
             </div>
             <p className=" text-[rgb(255,255,255,0.5)] ">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
@@ -55,20 +55,6 @@ export default function Footer() {
                 <p className=" text-white">Fianarantsoa 301 - Madagascar</p>
               </div>
             </div>
-            <div className=" flex items-center gap-4">
-              <IoIosSend
-                size={"2.5rem"}
-                className=" text-[var(--yellow-theme)] "
-              />
-              <div className=" flex flex-col">
-                <p className=" text-[var(--yellow-theme)]">
-                  Soatsihadino Fianarantsoa
-                </p>
-                <p className=" text-[var(--yellow-theme)]">
-                  Fianarantsoa 301 - Madagascar
-                </p>
-              </div>
-            </div>
           </div>
           <div className=" flex flex-col gap-8 w-1/3">
             <p className=" text-white text-2xl">Latest News</p>
@@ -92,18 +78,7 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <div className=" w-full flex items-center gap-4">
-              <div className=" w-1/3 h-[5rem] bg2 rounded-md "></div>
-              <div className=" w-2/3 flex flex-col h-full justify-around">
-                <p className=" text-[rgb(255,255,255,0.25)] ">
-                  Juillet 13 ,2022
-                </p>
-                <p className="text-[rgb(255,255,255,0.35)] max-w-full ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                  nisi eius iure!
-                </p>
-              </div>
-            </div>
+
             <div className=" w-max flex flex-col gap-1">
               <p className=" uppercase  font-bold text-white">all news</p>
               <div className=" h-[2px] w-1/3 bg-[var(--yellow-theme)] rounded-full "></div>

@@ -1,6 +1,11 @@
+"use client";
+
 import { BiArrowToRight } from "react-icons/bi";
 import { IoIosApps } from "react-icons/io";
 import style from "../../styles/HeaderLanding.module.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css"; // Import Swiper CSS
 
 export function CardLanding({ icon, titre, desc }) {
   return (
@@ -79,6 +84,21 @@ export function PetitCardLanding({ icon, titre, desc }) {
           {icon}
         </div>
       </div>
+    </>
+  );
+}
+export function MySwiper() {
+  return (
+    <>
+      <Swiper
+        spaceBetween={50} // Adjust spacing between slides
+        slidesPerView={3} // Set number of slides per view
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        {/* Add more slides as needed */}
+      </Swiper>
     </>
   );
 }
