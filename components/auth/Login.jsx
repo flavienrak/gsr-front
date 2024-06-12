@@ -201,9 +201,9 @@ export default function LogIn() {
         <div className="flex flex-col gap-4 w-96">
           <button
             disabled={googleLogin}
-            onClick={() => {
+            onClick={async () => {
               setGoogleLogin(true);
-              signIn("google");
+              await signIn("google");
             }}
             className={`bg-[var(--primary-color)] border border-[var(--dark)] rounded-sm h-12 w-full flex justify-center items-center group ${
               googleLogin ? "opacity-50" : "opacity-100"
@@ -223,9 +223,9 @@ export default function LogIn() {
           </button>
           <button
             disabled={githubLogin}
-            onClick={() => {
+            onClick={async () => {
               setGithubLogin(true);
-              signIn("github");
+              await signIn("github");
             }}
             className={`bg-[var(--primary-color)] border border-[var(--dark)] rounded-sm h-12 w-full flex justify-center items-center group ${
               githubLogin ? "opacity-50" : "opacity-100"
