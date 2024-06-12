@@ -2,19 +2,33 @@
 
 import qs from "query-string";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, createContext, useState } from "react";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { isEmpty } from "@/lib/functions";
+import {
+  verifyTokenController,
+  verifyUserController,
+} from "@/lib/controllers/authController";
+import { getUserController } from "@/lib/controllers/userController";
+import { fetchUserInfos } from "@/redux/slices/userSlice";
+import { notLoginPaths, protectedPaths } from "@/lib/paths";
+import { updatePersistInfos } from "@/redux/slices/persistSlice";
 
 export const UidContext = createContext();
 
-export default function UidContextProvider({ children }) {
+export default function UidContextProvider({ children, socialInfos }) {
+  const { authToken } = useSelector((state) => state.persistInfos);
+  const { push } = useRouter();
   const path = usePathname();
   const params = useSearchParams();
+  const dispatch = useDispatch();
 
   const [widthProgressBar, setWidthProgressBar] = useState(0);
   const [userId, setUserId] = useState(null);
   const [isLoadingJWT, setIsLoadingJWT] = useState(null);
+  const [verifyToken, setVerifyToken] = useState(true);
   const [currentQuery, setCurrentQuery] = useState({});
   const [showLogout, setShowLogout] = useState(false);
 
@@ -22,7 +36,54 @@ export default function UidContextProvider({ children }) {
   useEffect(() => {
     const newParams = qs.parse(params?.toString());
     setCurrentQuery(newParams);
+    setVerifyToken(false);
   }, [params]);
+
+  useEffect(() => {
+    if (!isEmpty(socialInfos)) {
+      (async () => {
+        const res = await verifyUserController(socialInfos.email);
+        if (res?.authToken) {
+          dispatch(updatePersistInfos({ authToken: res.authToken }));
+        } else if (res?.userNotFound) {
+          toast.error("Adresse email non enregistre", toastStyle);
+        }
+      })();
+    }
+  }, [socialInfos]);
+
+  useEffect(() => {
+    if (!isEmpty(authToken)) {
+      setVerifyToken(false);
+      if (notLoginPaths.includes(path)) {
+        push("/home");
+      } else {
+        (async () => {
+          setVerifyToken(true);
+          const res = await verifyTokenController(authToken);
+          setVerifyToken(false);
+          if (res?.infos) {
+            setUserId(res.infos.id);
+          }
+        })();
+      }
+    } else if (protectedPaths.includes(path)) {
+      setVerifyToken(false);
+      push("/auth?path=login");
+    }
+  }, [authToken]);
+
+  useEffect(() => {
+    if (!isEmpty(userId)) {
+      setVerifyToken(false);
+      (async () => {
+        const res = await getUserController(userId);
+        if (res?.user) {
+          dispatch(fetchUserInfos({ user: res.user }));
+        }
+      })();
+    }
+  }, [userId]);
 
   const removeQueries = (values) => {
     return Object.keys(currentQuery).reduce((nouvelObjet, cle) => {
@@ -70,6 +131,8 @@ export default function UidContextProvider({ children }) {
           currentQuery,
           widthProgressBar,
           toastStyle,
+          verifyToken,
+          socialInfos,
           loginOut,
           removeQueries,
           setLoadingBar,

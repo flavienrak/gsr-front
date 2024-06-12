@@ -162,7 +162,7 @@ export default function Register() {
         toast.error("L'utilisateur existe deja", toastStyle);
       } else if (res?.user) {
         toast.success("Votre compte vient d'etre cree", toastStyle);
-        push("/home?path=login");
+        push("/auth?path=login");
       }
     }
   };
@@ -252,13 +252,13 @@ export default function Register() {
             />
           </div>
         </form>
-        <div className="relative flex justify-center items-center gap-1 opacity-50">
+        {/* <div className="relative flex justify-center items-center gap-1 opacity-50">
           <span className="h-1 rounded-full w-1 bg-[var(--bg)]"> </span>
           <span className="h-1 rounded-full w-4 bg-[var(--bg)]"> </span>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-10 h-full justify-center w-1/2 items-center">
-        <h1 className="text-white font-extrabold text-8xl h-1/2">
+        <h1 className="text-[var(--cont)] font-extrabold text-8xl h-1/2">
           <span className="text-8xl bgText">Creer un</span>{" "}
           <p className="text-8xl pl-24">
             <span className="text-8xl bgText pl-1">compte</span> pour
@@ -266,7 +266,7 @@ export default function Register() {
           <span className="text-8xl pl-24">commencer.</span>
         </h1>
         <div className="flex flex-col gap-10">
-          <p className="text-[var(--cont)] text-md font-extralight pl-28">
+          <p className="text-[var(--cont)] font-light pl-28">
             En s{"'"}inscrivant, vous decouvrirez toutes les fonctionnalites
             disponibles et mises en services sur notre plateforme.
           </p>

@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import toast from "react-hot-toast";
 
 import { useContext, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -10,12 +12,12 @@ import { UidContext } from "@/context/UidContext";
 import { emailRegex } from "@/lib/regex";
 import { loginController } from "@/lib/controllers/authController";
 import { Button, Input } from "../utils/Utils";
-import Image from "next/image";
-import toast from "react-hot-toast";
 import { FaArrowLeft } from "react-icons/fa6";
+import { updatePersistInfos } from "@/redux/slices/persistSlice";
+import { signIn } from "next-auth/react";
 
 export default function LogIn() {
-  const { addMessage, toastStyle } = useContext(UidContext);
+  const { toastStyle } = useContext(UidContext);
   const dispatch = useDispatch();
   const form = useRef();
 
@@ -23,6 +25,8 @@ export default function LogIn() {
   const [password, setPassword] = useState({ valid: false, value: "" });
   const [userNotFound, setUserNotFound] = useState(false);
   const [incorrectPassword, setIncorrectPassword] = useState(false);
+  const [googleLogin, setGoogleLogin] = useState(false);
+  const [githubLogin, setGithubLogin] = useState(false);
   const [isModified, setIsModified] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -100,10 +104,9 @@ export default function LogIn() {
       } else if (res?.incorrectPassword) {
         setIncorrectPassword(true);
         toast.error("Mot de passe incorrect", toastStyle);
-      } else if (res?.user) {
-        // dispatch(updatePersistInfos({ authToken: res.token }));
-        // window.location = "/home?path=accueil";
-        console.log(res.user);
+      } else if (res?.authToken) {
+        dispatch(updatePersistInfos({ authToken: res.authToken }));
+        window.location = "/home?path=accueil";
       }
     }
   };
@@ -116,11 +119,11 @@ export default function LogIn() {
             <FaArrowLeft size={"2rem"} />
           </i>
         </Link>
-        <h1 className="text-white font-extrabold text-8xl">
+        <h1 className="text-[var(--cont)] font-extrabold text-8xl">
           <span className="text-8xl bgText">Se connecter </span> a votre{" "}
           <span className="text-8xl bgText">compte.</span>
         </h1>
-        <p className="text-[var(--cont)] text-md font-extralight w-2/3">
+        <p className="text-[var(--cont)] text-sm w-2/3 font-light">
           En vous connectant, vous aurez la possibilite d{"'"}exploiter toutes
           les fonctionnalites disponibles sur notre plateforme.
         </p>
@@ -185,21 +188,61 @@ export default function LogIn() {
             />
           </div>
         </form>
-        <p className="relative flex justify-center items-center w-96">
+        <div className="relative flex justify-center items-center gap-1 opacity-50">
+          <span className="h-1 rounded-full w-4 bg-[var(--dark)]"> </span>
+          <span className="h-1 rounded-full w-1 bg-[var(--dark)]"> </span>
+        </div>
+        {/* <p className="relative flex justify-center items-center w-96">
           <span className="text-xs z-20 bg-[var(--primary-color)] h-8 w-8 rounded-full text-[var(--bg)] border border-[var(--bg)] flex justify-center items-center">
             Ou
           </span>
           <span className="absolute w-full h-[0.5px] bg-[var(--bg)] z-10"></span>
-        </p>
-        <button className="bg-[var(--primary-color)] border border-[var(--bg)] rounded-sm h-12 w-96 flex justify-center items-center group">
-          <i className="relative h-8 w-14 py-2">
-            <Image src={"/images/google.png"} fill alt="" objectFit="contain" />
-          </i>
-          <span className="text-[var(--bg)]">Continuer avec Google</span>
-        </button>
-        <div className="relative flex justify-center items-center gap-1 opacity-50">
-          <span className="h-1 rounded-full w-4 bg-[var(--bg)]"> </span>
-          <span className="h-1 rounded-full w-1 bg-[var(--bg)]"> </span>
+        </p> */}
+        <div className="flex flex-col gap-4 w-96">
+          <button
+            disabled={googleLogin}
+            onClick={() => {
+              setGoogleLogin(true);
+              signIn("google");
+            }}
+            className={`bg-[var(--primary-color)] border border-[var(--dark)] rounded-sm h-12 w-full flex justify-center items-center group ${
+              googleLogin ? "opacity-50" : "opacity-100"
+            }`}
+          >
+            <i className="relative h-8 w-14 py-2">
+              <Image
+                src={"/images/google.png"}
+                fill
+                alt=""
+                objectFit="contain"
+              />
+            </i>
+            <span className="text-[var(--dark)]">
+              {googleLogin ? `Connexion...` : `Se connecter avec Google`}
+            </span>
+          </button>
+          <button
+            disabled={githubLogin}
+            onClick={() => {
+              setGithubLogin(true);
+              signIn("github");
+            }}
+            className={`bg-[var(--primary-color)] border border-[var(--dark)] rounded-sm h-12 w-full flex justify-center items-center group ${
+              githubLogin ? "opacity-50" : "opacity-100"
+            }`}
+          >
+            <i className="relative h-6 w-12 py-2">
+              <Image
+                src={"/images/github.png"}
+                fill
+                alt=""
+                objectFit="contain"
+              />
+            </i>
+            <span className="text-[var(--dark)]">
+              {githubLogin ? `Connexion...` : `Se connecter avec Github`}
+            </span>
+          </button>
         </div>
       </div>
     </div>

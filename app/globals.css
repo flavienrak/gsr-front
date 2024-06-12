@@ -67,21 +67,26 @@ body {
   --yellow-theme: hsl(50, 100%, 50%);
   --red-theme: hsl(7, 100%, 50%);
 
-  --green: hsl(106, 100%, 50%);
+  --green: hsl(106, 100%, 75%);
   --red: hsl(10, 100%, 50%);
 
   --dark: #151225;
   --white: #ffffff;
   --bg-landing: rgb(9, 1, 22);
 
-  --bg: hsl(240, 100%, 1%);
-  --bg-1: hsl(0, 0%, 5%);
+  /* --bg: hsl(240, 100%, 1%); */
+  --bg: hsl(255, 100%, 99%);
+  /* --bg-1: hsl(0, 0%, 5%); */
+  --bg-1: hsl(0, 0%, 95%);
   --bg-2: hsl(0, 0%, 10%);
 
   --bg-3: hsl(125, 100%, 5%);
   --bg-4: hsl(125, 100%, 10%);
 
-  --cont: #fffff5;
+  --bgFixed: hsla(240, 100%, 1%, 0.25);
+
+  /* --cont: #fffff5; */
+  --cont: #000005;
 
   margin: 0;
   padding: 0;
@@ -108,7 +113,10 @@ body {
 .blueTheme * {
   --primary-color: var(--blue-theme);
 }
-
+.bgFixed {
+  background: var(--bgFixed);
+  backdrop-filter: blur(1px);
+}
 .darkMode * {
   --bg: #151221;
   --bg-1: #241e38;
@@ -144,6 +152,9 @@ input::selection {
 
 textarea {
   resize: none;
+}
+image {
+  user-select: none;
 }
 
 .cadre {
