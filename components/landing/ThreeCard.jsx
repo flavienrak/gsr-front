@@ -1,31 +1,29 @@
 import { IoIosApps } from "react-icons/io";
-import { CardLanding } from "./UtilsLanding";
+import { CardLanding, MiniCard } from "./UtilsLanding";
 
 export default function ThreeCard() {
   return (
     <>
-      <div className="w-full h-screen flex items-center justify-center text-white bg-[var(--bg)] ">
-        <div className="flex items-center justify-center gap-6">
-          <CardLanding
-            icon={<IoIosApps size={"3rem"} />}
-            titre={"Paperspace H100s"}
-            desc={
-              "NVDI H100 are now avaible via Paperspace by Domee.Buils epicAI/MI.application"
-            }
+      <div className=" w-full h-[100vh] flex  items-center flex-col gap-16 bg-[var(--gray)] ">
+        <h1 className=" text-7xl bgTitre2 uppercase">Hello every body</h1>
+        <div className=" flex items-center justify-center gap-8 w-full flex-wrap">
+          <MiniCard
+            titre="Ti-code Team"
+            work="Ui,Ux Designer"
+            person="Lionel Socrate"
+            color="pink"
           />
-          <CardLanding
-            icon={<IoIosApps size={"3rem"} />}
-            titre={"Paperspace H100s"}
-            desc={
-              "NVDI H100 are now avaible via Paperspace by Domee.Buils epicAI/MI.application"
-            }
+          <MiniCard
+            titre="Ti-code Team"
+            work="Backend Developer"
+            person="Flavien Ariniaina"
+            color="blue"
           />
-          <CardLanding
-            icon={<IoIosApps size={"3rem"} />}
-            titre={"Paperspace H100s"}
-            desc={
-              "NVDI H100 are now avaible via Paperspace by Domee.Buils epicAI/MI.application"
-            }
+          <MiniCard
+            titre="Ti-code Team"
+            work="Frontend Developer"
+            person="Faliarison Raphael"
+            color="orange"
           />
         </div>
       </div>

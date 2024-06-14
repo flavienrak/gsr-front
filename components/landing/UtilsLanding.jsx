@@ -67,3 +67,26 @@ export function PetitCardLanding({ icon, titre, desc }) {
     </>
   );
 }
+
+export function MiniCard({ titre, work, person, color }) {
+  return (
+    <div
+      className={` flex items-center flex-col gap-8 rounded-xl  shadow-sm relative py-8 px-4 min-w-[23rem] bg-white overflow-hidden`}
+    >
+      {/* <div className={` absolute shadow${color}1`}></div>
+      <div className={` absolute shadow${color}2`}></div> */}
+      <p className={`text-2xl uppercase text-[var(--${color})]`}>{titre}</p>
+
+      <div
+        className={` w-[20rem] h-[14rem] bg1  rounded-md flex items-center justify-center `}
+      >
+        {/* <IoPeople size={"4rem"} className={` text-[var(--${color})]`} /> */}
+      </div>
+
+      <div className=" flex flex-col items-center gap-1">
+        <p className={`text-3xl  text-[var(--${color})]`}>{work}</p>
+        <p className=" text-xl text-slate-300">{person}</p>
+      </div>
+    </div>
+  );
+}

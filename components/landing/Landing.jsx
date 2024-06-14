@@ -2,15 +2,15 @@ import Header from "./Header";
 import ThreeCard from "./ThreeCard";
 import SixCard from "./SixCard";
 import About from "./About";
-import Topbar from "../home/Topbar";
+import SecondPage from "./SecondPage";
 
 export default function Landing() {
   return (
     <>
       <div className=" w-full overflow-x-hidden bg-[var(--bg-landing)] ">
-        <Topbar />
         <Header />
-        <ThreeCard />
+        <SecondPage />
+        {/* <ThreeCard /> */}
         <SixCard />
         <About />
       </div>
