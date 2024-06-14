@@ -210,3 +210,10 @@ image {
 .lien:hover {
   background: var(--gray);
 }
+.input {
+  background: var(--gray);
+  outline: none;
+}
+.listInfo > div:nth-child(even) {
+  background: var(--white);
+}
