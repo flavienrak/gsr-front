@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Accueil from "./Accueil";
+import Accueil from "./Acceuil";
 import Profil from "./Profil";
 import EditProfil from "./EditProfil";
 
@@ -38,30 +38,6 @@ export default function Home() {
         ) : (
           <Accueil />
         )}
-
-        <Link
-          href={{
-            pathname: path,
-            query: {
-              path: "profil",
-            },
-          }}
-        >
-          Profil
-        </Link>
-
-        <Link
-          href={{
-            pathname: path,
-            query: {
-              path: "home",
-            },
-          }}
-        >
-          Home
-        </Link>
-
-        <button onClick={() => loginOut(true)}>Logout</button>
 
         {showLogout && (
           <div className="fixed bgFixed top-0 left-0 w-full h-full flex justify-center items-center">
