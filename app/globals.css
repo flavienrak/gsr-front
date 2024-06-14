@@ -51,7 +51,7 @@
 *,
 html,
 body {
-  --primary-color: hsl(125, 100%, 50%);
+  --primary-color: #ff6600;
   --bg-red-5: rgba(239, 68, 68, 0.25);
   --bg-gradient: radial-gradient(
       ellipse at bottom,
@@ -175,7 +175,7 @@ image {
 }
 .scr {
   scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) transparent;
+  scrollbar-color: #ccc transparent;
 }
 .scr::-webkit-scrollbar {
   width: 6px;

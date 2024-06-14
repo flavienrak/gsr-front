@@ -9,6 +9,7 @@ import { Input } from "../utils/Utils";
 import { useState } from "react";
 import { IoMdAddCircle } from "react-icons/io";
 import { MdDeleteOutline } from "react-icons/md";
+import ConfirmationPopup from "../payement/PayementPopup";
 
 export default function CreateService() {
   const [nomService, setNomService] = useState("");
@@ -27,6 +28,7 @@ export default function CreateService() {
   return (
     <>
       <div className=" w-full h-screen flex flex-col overflow-hidden">
+        {/* <ConfirmationPopup /> */}
         <Topbar />
         <div className=" bg-[var(--gray)] w-full h-full flex  gap-8 px-8 py-8 ">
           <Navbar />
