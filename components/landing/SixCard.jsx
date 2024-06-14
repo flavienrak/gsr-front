@@ -1,6 +1,5 @@
 import React from "react";
 import { BiSolidLayer } from "react-icons/bi";
-import style from "../../styles/HeaderLanding.module.css";
 import { PetitCardLanding } from "./UtilsLanding";
 
 export default function SixCard() {

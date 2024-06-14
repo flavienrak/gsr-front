@@ -72,6 +72,9 @@ body {
 
   --dark: #151225;
   --white: #ffffff;
+  --gray: rgb(247, 247, 247);
+  --gray-text: rgba(0, 0, 0, 0.25);
+  --gray-text2: rgba(0, 0, 0, 0.5);
   --bg-landing: rgb(9, 1, 22);
 
   /* --bg: hsl(240, 100%, 1%); */

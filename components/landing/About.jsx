@@ -1,5 +1,4 @@
 import React from "react";
-import style from "../../styles/HeaderLanding.module.css";
 import {
   IoIosMail,
   IoLogoFacebook,
