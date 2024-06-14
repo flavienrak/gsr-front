@@ -72,6 +72,7 @@ body {
 
   --dark: #151225;
   --white: #ffffff;
+<<<<<<< HEAD
   --gray: rgb(247, 247, 247);
   --gray-text: rgba(0, 0, 0, 0.25);
   --gray-text2: rgba(0, 0, 0, 0.5);
@@ -90,6 +91,14 @@ body {
 
   /* --cont: #fffff5; */
   --cont: #000005;
+=======
+  --bg-landing: #1a202c;
+  --bg-transparent: rgb(0, 0, 0, 0.15);
+  --bg-blue: #4ae;
+  --bg: #f1f5f9;
+  --bg-1: #ffffff;
+  --cont: #151225;
+>>>>>>> ca6cbf5 (profil et edit)
 
   margin: 0;
   padding: 0;
