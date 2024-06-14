@@ -1,4 +1,3 @@
-import style from "../../styles/HeaderLanding.module.css";
 import { BiArrowToRight } from "react-icons/bi";
 
 export function CardLanding({ icon, titre, desc }) {
@@ -45,22 +44,20 @@ export function PetitCardLanding({ icon, titre, desc }) {
         <p className="  text-slate-400 text-center font-light">{desc}</p>
         <div className=" absolute w-full h-full overflow-hidden rounded-xl ">
           <div
-            className={`${style.shadowButton} absolute bottom-[18rem] right-[10rem] h-16 w-16 `}
+            className={`absolute bottom-[18rem] right-[10rem] h-16 w-16 `}
           ></div>
         </div>
         <div className=" absolute w-full h-full overflow-hidden rounded-xl ">
           <div
-            className={`${style.shadowButton} absolute top-[18rem] right-[10rem] h-16 w-16 `}
+            className={`absolute top-[18rem] right-[10rem] h-16 w-16 `}
           ></div>
         </div>
         <div className=" absolute w-full h-full overflow-hidden  rounded-xl ">
-          <div
-            className={`${style.shadowButton} absolute top-[4rem] left-[-11rem] h-16 w-16 `}
-          ></div>
+          <div className={`absolute top-[4rem] left-[-11rem] h-16 w-16 `}></div>
         </div>
         <div className=" absolute w-full h-full overflow-hidden  rounded-xl ">
           <div
-            className={`${style.shadowButton} absolute top-[4rem] right-[-11rem] h-16 w-16 `}
+            className={`absolute top-[4rem] right-[-11rem] h-16 w-16 `}
           ></div>
         </div>
         <div className=" absolute top-[-2.5rem] left-[41%] w-[5rem] h-[5rem] overflow-hidden rounded-full bg-[var(--bg-3)]  flex items-center justify-center text-[var(--primary-color)] ">

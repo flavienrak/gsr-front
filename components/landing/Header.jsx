@@ -1,18 +1,15 @@
 import React from "react";
-import AnimationStar from "./AnimationStar";
 import Link from "next/link";
 import { MdArrowRight } from "react-icons/md";
 
 export default function Header() {
   return (
     <>
-      <div className=" relative w-full h-screen flex justify-center bg-[var(--bg-landing)] text-[var(--white)] overflow-hidden p-10">
-        <AnimationStar />
-        <AnimationStar />
+      <div className=" relative w-full h-screen flex justify-center bg-[var(--bg)] text-[var(--white)] overflow-hidden p-10">
         <div className="h-full flex flex-col gap-10 z-20 w-5/6">
           <div className="flex justify-between px-10 bg-[var(--bg-1)] h-16 items-center rounded-sm">
             <div className="">
-              <label className="font-extrabold">
+              <label className="font-extrabold text-[var(--cont)]">
                 <span className="text-2xl">L.</span>
               </label>
             </div>
@@ -26,9 +23,7 @@ export default function Header() {
                 }}
                 className="rounded-full w-24 flex justify-center items-center h-8"
               >
-                <span className="text-[var(--white)] text-sm">
-                  Se connecter
-                </span>
+                <span className="text-[var(--cont)] text-sm">Se connecter</span>
               </Link>
               <Link
                 href={{
