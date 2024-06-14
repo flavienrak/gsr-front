@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <>
       {/* condition => true ? <Acceuil /> : <Profil /> */}
-
       {currentQuery?.path === "profil" && isEmpty(currentQuery?.edit) ? (
         <Profil />
       ) : currentQuery?.edit === "profil" ? (
@@ -22,7 +21,6 @@ export default function Home() {
       ) : (
         <Accueil />
       )}
-
       <Link
         href={{
           pathname: path,
@@ -33,7 +31,6 @@ export default function Home() {
       >
         Profil
       </Link>
-
       <Link
         href={{
           pathname: path,
