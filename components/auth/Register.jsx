@@ -15,7 +15,7 @@ import { isEmpty } from "@/lib/functions";
 import { registerController } from "@/lib/controllers/authController";
 
 export default function Register() {
-  const { addMessage, toastStyle } = useContext(UidContext);
+  const { toastStyle } = useContext(UidContext);
   const { push } = useRouter();
   const form = useRef();
 
@@ -162,7 +162,7 @@ export default function Register() {
         toast.error("L'utilisateur existe deja", toastStyle);
       } else if (res?.user) {
         toast.success("Votre compte vient d'etre cree", toastStyle);
-        push("/home?path=login");
+        push("/auth?path=login");
       }
     }
   };
@@ -252,22 +252,22 @@ export default function Register() {
             />
           </div>
         </form>
-        <div className="relative flex justify-center items-center gap-1 opacity-50">
+        {/* <div className="relative flex justify-center items-center gap-1 opacity-50">
           <span className="h-1 rounded-full w-1 bg-[var(--bg)]"> </span>
           <span className="h-1 rounded-full w-4 bg-[var(--bg)]"> </span>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-10 h-full justify-center w-1/2 items-center">
-        <h1 className="text-white font-extrabold text-8xl h-1/2">
-          <span className="text-8xl bgText">Creer un</span>{" "}
+        <h1 className="text-[var(--cont)] font-extrabold text-8xl h-1/2">
+          <span className="text-8xl bgText">Créer un</span>{" "}
           <p className="text-8xl pl-24">
             <span className="text-8xl bgText pl-1">compte</span> pour
           </p>
           <span className="text-8xl pl-24">commencer.</span>
         </h1>
         <div className="flex flex-col gap-10">
-          <p className="text-[var(--cont)] text-md font-extralight pl-28">
-            En s{"'"}inscrivant, vous decouvrirez toutes les fonctionnalites
+          <p className="text-[var(--cont)] font-light pl-28">
+            En s{"'"}inscrivant, vous découvrirez toutes les fonctionnalités
             disponibles et mises en services sur notre plateforme.
           </p>
           <div className="pl-10">
@@ -275,7 +275,7 @@ export default function Register() {
           </div>
           <div className="flex items-center gap-1 w-full pl-10">
             <p className="text-[var(--cont)]">
-              Vous avez deja un compte enregistré ?
+              Vous avez déjà un compte enregistré ?
             </p>
             <Link
               href={{
