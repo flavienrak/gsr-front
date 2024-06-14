@@ -166,6 +166,7 @@ export default function LogIn() {
                   setEmail((prev) => ({ ...prev, value: e.target.value }))
                 }
               />
+
               <Input
                 id={"password"}
                 type={"password"}
@@ -188,7 +189,7 @@ export default function LogIn() {
             />
           </div>
         </form>
-        <div className="relative flex justify-center items-center gap-1 opacity-50">
+        <div className="relative flex justify-center items-center gap-1 opacity-80">
           <span className="h-1 rounded-full w-4 bg-[var(--dark)]"> </span>
           <span className="h-1 rounded-full w-1 bg-[var(--dark)]"> </span>
         </div>

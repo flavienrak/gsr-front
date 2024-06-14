@@ -64,6 +64,11 @@ export default function UidContextProvider({ children, socialInfos }) {
           setVerifyToken(false);
           if (res?.infos) {
             setUserId(res.infos.id);
+          } else if (res?.userNotFound) {
+            toast.error("Utilisateur non trouvé", toastStyle);
+            if (protectedPaths.includes(path)) {
+              push("/auth?path=login");
+            }
           }
         })();
       }
