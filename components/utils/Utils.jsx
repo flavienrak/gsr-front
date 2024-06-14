@@ -49,7 +49,7 @@ export function Button({ icon, label, loading, type, valid }) {
       type={type}
       disabled={typeof valid === "boolean" ? !valid : false}
       className={`bg-[var(--dark)] text-[var(--primary-color)] border border-[var(--dark)] h-12 rounded-sm flex justify-center items-center gap-2 ${
-        loading || !valid ? `opacity-50` : ""
+        loading || !valid ? `opacity-80` : ""
       }`}
     >
       <span>{loading ? `${label}...` : `${label}`}</span>

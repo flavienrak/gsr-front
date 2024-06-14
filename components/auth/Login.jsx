@@ -221,7 +221,7 @@ export default function LogIn() {
               {googleLogin ? `Connexion...` : `Se connecter avec Google`}
             </span>
           </button>
-          <button
+          {/* <button
             disabled={githubLogin}
             onClick={async () => {
               setGithubLogin(true);
@@ -242,7 +242,7 @@ export default function LogIn() {
             <span className="text-[var(--dark)]">
               {githubLogin ? `Connexion...` : `Se connecter avec Github`}
             </span>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
