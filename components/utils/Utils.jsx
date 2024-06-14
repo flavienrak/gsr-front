@@ -8,6 +8,7 @@ export function Input({
   value,
   error,
   required,
+  bg,
 }) {
   return (
     <div className="relative flex items-center">
@@ -26,9 +27,9 @@ export function Input({
       />
       <label
         htmlFor={id}
-        className={`absolute left-10 -translate-y-6 -translate-x-1 text-sm peer-placeholder-shown:translate-y-0 peer-placeholder-shown:translate-x-0 peer-placeholder-shown:text-base peer-focus:-translate-y-6 peer-focus:-translate-x-1 peer-focus:text-sm bg-[var(--primary-color)] px-1 rounded-sm transition-all duration-150 cursor-text ${
+        className={`absolute left-10 -translate-y-6 -translate-x-1 text-sm peer-placeholder-shown:translate-y-0 peer-placeholder-shown:translate-x-0 peer-placeholder-shown:text-base peer-focus:-translate-y-6 peer-focus:-translate-x-1 peer-focus:text-sm px-1 rounded-sm transition-all duration-150 cursor-text ${
           error ? "text-[var(--red)]" : "text-[var(--dark)]"
-        }`}
+        } ${bg ? `${bg}` : "bg-[var(--primary-color)]"}`}
       >
         {label}
       </label>
