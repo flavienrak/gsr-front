@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Header from "./Header";
 import ThreeCard from "./ThreeCard";
 import SixCard from "./SixCard";

@@ -120,16 +120,16 @@ export default function LogIn() {
           </i>
         </Link>
         <h1 className="text-[var(--cont)] font-extrabold text-8xl">
-          <span className="text-8xl bgText">Se connecter </span> a votre{" "}
+          <span className="text-8xl bgText">Se connecter </span> à votre{" "}
           <span className="text-8xl bgText">compte.</span>
         </h1>
-        <p className="text-[var(--cont)] text-sm w-2/3 font-light">
-          En vous connectant, vous aurez la possibilite d{"'"}exploiter toutes
-          les fonctionnalites disponibles sur notre plateforme.
+        <p className="text-[var(--cont)] w-2/3 font-light">
+          En vous connectant, vous aurez la possibilité d{"'"}exploiter toutes
+          les fonctionnalités disponibles sur notre plateforme.
         </p>
         <div className="px-1 flex items-center gap-1 border-t border-[var(--bg-4)] py-10">
           <p className="text-[var(--cont)]">
-            Vous n{"'"}etes pas encore enregistré ?
+            Vous n{"'"}êtes pas encore enregistré ?
           </p>
           <Link
             href={{
