@@ -188,3 +188,25 @@ image {
   background-color: transparent;
   transition: 0.15s;
 }
+.activeLink {
+  position: relative;
+  background: var(--gray);
+}
+.activeLink::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 5px;
+  height: 100%;
+  background: var(--primary-color);
+}
+.activeLink > svg {
+  color: var(--primary-color);
+}
+.activeLink > p {
+  color: var(--primary-color);
+}
+.lien:hover {
+  background: var(--gray);
+}
