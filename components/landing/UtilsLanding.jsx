@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BiArrowToRight } from "react-icons/bi";
 
 export function CardLanding({ icon, titre, desc }) {
@@ -77,10 +78,8 @@ export function MiniCard({ titre, work, person, color }) {
       <div className={` absolute shadow${color}2`}></div> */}
       <p className={`text-2xl uppercase text-[var(--${color})]`}>{titre}</p>
 
-      <div
-        className={` w-[20rem] h-[14rem] bg1  rounded-md flex items-center justify-center `}
-      >
-        {/* <IoPeople size={"4rem"} className={` text-[var(--${color})]`} /> */}
+      <div className=" relative w-[20rem] h-[14rem]  rounded-md overflow-hidden ">
+        <Image src={"/images/img.jpg"} alt="" fill objectFit="cover" />
       </div>
 
       <div className=" flex flex-col items-center gap-1">

@@ -9,7 +9,7 @@ export default function SecondPage() {
     <>
       <div className=" w-full h-[100vh] flex px-16 items-center justify-center bg-[var(--white)] ">
         <div className=" flex flex-col gap-8 w-1/2">
-          <h1 className=" text-6xl text-[var(--cont)]   ">
+          <h1 className=" font-extrabold text-6xl text-[var(--cont)]   ">
             Falicitez à communiquer avec{" "}
             <span className=" font-extrabold text-7xl bgText ">Infinity</span>
           </h1>

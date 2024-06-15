@@ -7,9 +7,7 @@ export default function SixCard() {
   return (
     <div className=" w-full h-screen px-[6rem] flex items-center justify-center flex-col gap-16 bg-[var(--gray)] ">
       <div className=" w-full flex items-center justify-center flex-col gap-2">
-        <p className=" text-5xl font-bold text-[var(--primary-color)] uppercase">
-          Objectifs
-        </p>
+        <p className=" font-extrabold text-7xl bgText">Objectifs</p>
       </div>
       <div className=" grid grid-rows-2 grid-cols-3 gap-x-8 gap-y-12">
         <div className=" relative flex items-center justify-center flex-col gap-2 px-16 py-12 bg-white rounded-xl shadow-sm">
