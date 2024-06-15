@@ -10,8 +10,8 @@ export default function Landing() {
     <>
       <TopbarLanding />
       <div className=" w-full overflow-x-hidden bg-[var(--white)] ">
-        <Header />
         <SecondPage />
+        <Header />
         <ThreeCard />
         <SixCard />
         <Footer />

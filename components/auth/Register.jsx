@@ -15,8 +15,25 @@ import { isEmpty } from "@/lib/functions";
 import { registerController } from "@/lib/controllers/authController";
 import { PiUserSquareFill } from "react-icons/pi";
 import { ministeres } from "@/lib/docs";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Register() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+  const variants = {
+    hidden: { opacity: 0, y: -70 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   const { toastStyle } = useContext(UidContext);
   const { push } = useRouter();
   const form = useRef();
@@ -384,13 +401,19 @@ export default function Register() {
         </div> */}
       </div>
       <div className="flex flex-col gap-10 h-full justify-center w-1/2 items-center">
-        <h1 className="text-[var(--cont)] font-extrabold text-8xl h-1/2">
+        <motion.h1
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+          className="text-[var(--cont)] font-extrabold text-8xl h-1/2"
+        >
           <span className="text-8xl bgText">Créer un</span>{" "}
           <p className="text-8xl pl-24">
             <span className="text-8xl bgText pl-1">compte</span> pour
           </p>
           <span className="text-8xl pl-24">commencer.</span>
-        </h1>
+        </motion.h1>
         <div className="flex flex-col gap-10">
           <p className="text-[var(--cont)] font-light pl-28">
             En s{"'"}inscrivant, vous découvrirez toutes les fonctionnalités

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function TopbarLanding() {
   return (
     <>
-      <div className=" fixed top-0 left-0  z-50 w-full flex  justify-center  bg-[var(--white)] h-16 items-center rounded-sm">
+      <div className=" fixed top-0 left-0  z-50 w-full flex  justify-center  bg-[var(--white)] shadow-lg h-16 items-center rounded-sm">
         <div className=" w-[80%] flex items-center justify-between ">
           <div className=" flex items-center gap-4">
             <div className="relative h-8 w-8">

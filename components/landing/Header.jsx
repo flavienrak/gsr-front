@@ -1,31 +1,69 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { MdArrowRight } from "react-icons/md";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import organisme from "../../public/images/organisme.jpg";
 
 export default function Header() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+  const variants = {
+    hidden: { opacity: 0, x: -70 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+  const variantschilds = {
+    hidden: { opacity: 0, x: 70 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+  const variantschilds2 = {
+    hidden: { opacity: 0, x: 70 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <>
       <div className=" relative w-full h-screen flex justify-center bg-[var(--bg)] text-[var(--white)] overflow-hidden p-10">
         <div className="h-full flex flex-col items-center justify-center gap-10 z-20 w-5/6">
           <div className="w-full flex items-center flex-col justify-center gap-10">
-            <h1 className={`font-extrabold text-8xl bgText text-center`}>
+            <motion.h1
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={variantschilds}
+              className={`font-extrabold text-8xl bgText text-center`}
+            >
               Decouvrir <br />
               <span className="text-8xl text-[var(--cont)]">
                 {" "}
-                nos services en ligne.
+                les services en ligne disponibles sur <br />
+                <span className=" bgText text-8xl">notre plateforme.</span>
               </span>{" "}
-            </h1>
-            <p className=" text-center text-[var(--cont)] font-light opacity-70 text-lg">
-              Accéeder facilement à vos services publics .
-            </p>
-            <div className=" flex items-center justify-center gap-6">
+            </motion.h1>
+
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={variants}
+              className=" flex items-center justify-center gap-6"
+            >
               <button className="bgGradient border border-[var(--primary-color)] rounded-full px-8 h-12 flex justify-center items-center text-[var(--bg)]">
                 <span>Commencer</span>
                 <i>
                   <MdArrowRight size={"1.5rem"} />
                 </i>
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
         {/* <div className=" absolute top-0 left-0 w-full h-full z-10">

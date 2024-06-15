@@ -15,8 +15,25 @@ import { Button, Input } from "../utils/Utils";
 import { FaArrowLeft } from "react-icons/fa6";
 import { updatePersistInfos } from "@/redux/slices/persistSlice";
 import { signIn } from "next-auth/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function LogIn() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+  const variants = {
+    hidden: { opacity: 0, y: -70 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   const { toastStyle } = useContext(UidContext);
   const dispatch = useDispatch();
   const form = useRef();
@@ -119,10 +136,16 @@ export default function LogIn() {
             <FaArrowLeft size={"2rem"} />
           </i>
         </Link>
-        <h1 className="text-[var(--cont)] font-extrabold text-8xl">
+        <motion.h1
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+          className="text-[var(--cont)] font-extrabold text-8xl"
+        >
           <span className="text-8xl bgText">Se connecter </span> à votre{" "}
           <span className="text-8xl bgText">compte.</span>
-        </h1>
+        </motion.h1>
         <p className="text-[var(--cont)] w-2/3 font-light">
           En vous connectant, vous aurez la possibilité d{"'"}exploiter toutes
           les fonctionnalités disponibles sur notre plateforme.

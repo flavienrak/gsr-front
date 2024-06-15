@@ -1,14 +1,39 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { IoMdStarOutline } from "react-icons/io";
 import { PiMetaLogo } from "react-icons/pi";
 import boy from "../../public/images/boy.png";
 import { IoPersonOutline } from "react-icons/io5";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function SecondPage() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+  const variants = {
+    hidden: { opacity: 0, y: 70 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <>
-      <div className=" w-full h-[100vh] flex px-16 items-center justify-center bg-[var(--white)] ">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={variants}
+        className=" w-full h-[100vh] flex px-16 items-center justify-center bg-[var(--white)] "
+      >
         <div className=" flex flex-col gap-8 w-1/2">
           <h1 className=" font-extrabold text-6xl text-[var(--cont)]   ">
             C'est quoi{" "}
@@ -84,7 +109,7 @@ export default function SecondPage() {
             <Image src={boy} alt="boy" width={540} />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
