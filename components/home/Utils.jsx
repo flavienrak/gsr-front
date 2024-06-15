@@ -2,7 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaEllipsis } from "react-icons/fa6";
 
-export default function Bouton({ label, bg, color, width }) {
+export function PrimaryBouton({ label, fullWidth, fontBig }) {
+  return (
+    <button
+      className={`text-[var(--white)] h-full rounded-full py-2 px-8 bg-[var(--primary-color)] font-semibold ${
+        fullWidth ? "w-full" : ""
+      } ${fontBig ? "" : "text-sm"}`}
+    >
+      {label}
+    </button>
+  );
+}
+
+export function Bouton({ label, bg, color, width }) {
   return (
     <>
       <button

@@ -51,17 +51,18 @@
 *,
 html,
 body {
-  --primary-color: #ff6600;
-  --bg-red-5: rgba(239, 68, 68, 0.25);
-  --bg-gradient: radial-gradient(
-      ellipse at bottom,
-      var(--primary-color),
-      transparent
-    ),
-    radial-gradient(ellipse at top, transparent, var(--primary-color));
-
+  --primary-color: #ff7705;
+  --secondary-color: #b00ff0;
+  --bg-red-5: #ef444440;
+  --bg-gradient: linear-gradient(
+    33deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  --color-light: #f0eef6;
+  --color-gray: #c0afc0;
   --green-theme: hsl(125, 100%, 50%);
-  --purple-theme: hsl(267, 100%, 50%);
+  --purple-theme: #7300ff;
   --blue-theme: hsl(202, 84%, 50%);
   --blue-theme: hsl(215, 100%, 50%);
   --yellow-theme: hsl(50, 100%, 50%);
@@ -173,6 +174,7 @@ image {
 .cadre.cadre-l {
   left: -180vh;
 }
+
 .scr {
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;

@@ -7,8 +7,7 @@ import Topbar from "../home/Topbar";
 export default function Landing() {
   return (
     <>
-      <div className=" w-full overflow-x-hidden bg-[var(--bg-landing)] ">
-        <Topbar />
+      <div className="w-4/5 bg-[var(--color-light)] ">
         <Header />
         <ThreeCard />
         <SixCard />
