@@ -40,7 +40,8 @@ const links = [
 ];
 
 export default function Navbar() {
-  const { path } = useContext(UidContext);
+  const { path, currentQuery } = useContext(UidContext);
+
   return (
     <div className="w-full flex flex-col items-center gap-4 h-full">
       <div className="w-full flex items-center gap-4 p-4 bg-[var(--white)] rounded-xl">
@@ -62,8 +63,9 @@ export default function Navbar() {
           </p>
         </div>
       </div>
+
       <div className="w-full flex-1 bg-[var(--white)] rounded-xl">
-        {links.map((item) => (
+        {links.map((item, index) => (
           <Link
             key={item.label}
             href={{
@@ -72,15 +74,21 @@ export default function Navbar() {
                 path: item.path,
               },
             }}
-            className={
-              "flex gap-4 items-center w-full h-10 px-5 py-8 hover:bg-[var(--color-light)]"
-            }
+            className={`flex gap-4 items-center w-full h-10 px-5 py-8 hover:bg-[var(--color-light)] transition-all duration-100 hover:font-semibold ${
+              index === 0 ? "rounded-t-xl" : ""
+            }  ${
+              currentQuery.path === item.path
+                ? "bg-[var(--color-light)] text-[var(--primary-color)] rounded-none hover:border-[var(--primary-color)] cursor-default border-l-4 border-[var(--primary-color)]"
+                : ""
+            }`}
+            // ${index === links.length - 1 ? "rounded-b-xl" : ""}
           >
             <i>{item.icon}</i>
             <span className={""}>{item.label}</span>
           </Link>
         ))}
       </div>
+
       <div className="w-full min-h-12">
         <PrimaryBouton label={"Créer Service"} fullWidth fontBig />
       </div>

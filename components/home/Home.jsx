@@ -14,6 +14,7 @@ import { signOut } from "next-auth/react";
 import { useDispatch } from "react-redux";
 import { updatePersistInfos } from "@/redux/slices/persistSlice";
 import Navbar from "./Navbar";
+import CreateService from "../organisme/CreateService";
 
 export default function Home() {
   const { currentQuery, path, verifyToken, loginOut, showLogout } =
@@ -36,13 +37,25 @@ export default function Home() {
             <Topbar />
           </div>
         </div>
-        <div className="w-full flex justify-center p-4 flex-1">
-          <div className={"w-4/5 flex justify-center"}>
+        <div className="w-full flex justify-center py-4 flex-1">
+          <div className={"w-4/5 flex justify-center gap-4"}>
+            {/* max-h-[calc(100vh-6rem)] */}
             <div className="flex w-[18vw]">
               <Navbar />
             </div>
-            <div className={"flex-1"}></div>
-            <div className="flex w-[20vw]"></div>
+            <div className={"flex-1"}>
+              {currentQuery.path === "nouveau" && (
+                <>
+                  <CreateService />
+                </>
+              )}
+              {currentQuery.path === "services" && (
+                <>
+                  <CreateService />
+                </>
+              )}
+            </div>
+            {/* <div className="flex w-[20vw]"></div> */}
             {/* condition => true ? <Acceuil /> : <Profil /> */}
 
             {/* {currentQuery?.path === "profil" && isEmpty(currentQuery?.edit) ? (

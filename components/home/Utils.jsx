@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { FaArrowRight, FaEllipsis } from "react-icons/fa6";
 
 export function PrimaryBouton({ label, fullWidth, fontBig }) {
   return (
     <button
-      className={`text-[var(--white)] h-full rounded-full py-2 px-8 bg-[var(--primary-color)] font-semibold ${
+      className={`text-[var(--white)] h-full rounded-md py-2 px-8 bg-[var(--primary-color)] font-semibold ${
         fullWidth ? "w-full" : ""
       } ${fontBig ? "" : "text-sm"}`}
     >

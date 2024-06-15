@@ -8,7 +8,7 @@ export default function Acceuil() {
   return (
     <>
       {/* <CreateService /> */}
-      <ViewService />
+      {/* <ViewService /> */}
       {/* <NotificationOrg /> */}
     </>
   );
