@@ -6,8 +6,21 @@ import React, { useState } from "react";
 import { FaArrowRight, FaEllipsis } from "react-icons/fa6";
 import { IoMdArrowDropright } from "react-icons/io";
 import logoService from "../../public/image/logopage.png";
+import { BsArrowRight } from "react-icons/bs";
 
-export default function Bouton({ label, bg, color, width }) {
+export function PrimaryBouton({ label, fullWidth, fontBig }) {
+  return (
+    <button
+      className={`text-[var(--white)] h-full rounded-md py-2 px-8 bg-[var(--primary-color)] font-semibold ${
+        fullWidth ? "w-full" : ""
+      } ${fontBig ? "" : "text-sm"}`}
+    >
+      {label}
+    </button>
+  );
+}
+
+export function Bouton({ label, bg, color, width }) {
   return (
     <>
       <button
@@ -127,6 +140,76 @@ export function Liste({ titre, description }) {
           </button>
           <IoMdArrowDropright size={25} color="var(--white)" />
         </div>
+      </div>
+    </div>
+  );
+}
+export function CardAccueilService({
+  imgOrganisme,
+  imgService,
+  service,
+  organisme,
+}) {
+  return (
+    <div className=" flex flex-col gap-4 bg-[var(--gray)] rounded-md overflow-hidden  ">
+      <div className="relative w-full h-[12rem] rounded-full">
+        <Image src={imgService} alt="" fill objectFit="cover" className="" />
+      </div>
+      <div className=" w-full flex ic justify-between px-4 pb-4">
+        <div className=" flex items-center justify-center gap-2">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden">
+            <Image
+              src={imgOrganisme}
+              alt=""
+              fill
+              objectFit="cover"
+              className=""
+            />
+          </div>
+          <div className=" flex flex-col leading-[1rem] ">
+            <p className=" text-[var(--primary-color)] text-xl ">{service}</p>
+            <p>{organisme}</p>
+          </div>
+        </div>
+        <button className="  flex items-center gap-4  text-[var(--primary-color)] ">
+          <p>Consulter</p>
+          <BsArrowRight />
+        </button>
+      </div>
+    </div>
+  );
+}
+export function CardAccueilDemande({
+  imgOrganisme,
+  imgService,
+  service,
+  organisme,
+}) {
+  return (
+    <div className=" flex flex-col gap-4 bg-[var(--gray)] rounded-md overflow-hidden  ">
+      <div className="relative w-full h-[18rem] rounded-full">
+        <Image src={imgService} alt="" fill objectFit="cover" className="" />
+      </div>
+      <div className=" w-full flex ic justify-between px-4 pb-4">
+        <div className=" flex items-center justify-center gap-2">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden">
+            <Image
+              src={imgOrganisme}
+              alt=""
+              fill
+              objectFit="cover"
+              className=""
+            />
+          </div>
+          <div className=" flex flex-col leading-[1rem] ">
+            <p className=" text-[var(--primary-color)] text-xl ">{service}</p>
+            <p>{organisme}</p>
+          </div>
+        </div>
+        <button className="  flex items-center gap-4  text-[var(--primary-color)] ">
+          <p>Consulter</p>
+          <BsArrowRight />
+        </button>
       </div>
     </div>
   );

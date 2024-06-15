@@ -3,10 +3,12 @@ import ThreeCard from "./ThreeCard";
 import SixCard from "./SixCard";
 import SecondPage from "./SecondPage";
 import Footer from "./Footer";
+import TopbarLanding from "./TopbarLanding";
 
 export default function Landing() {
   return (
     <>
+      <TopbarLanding />
       <div className=" w-full overflow-x-hidden bg-[var(--white)] ">
         <Header />
         <SecondPage />

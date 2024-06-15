@@ -3,15 +3,12 @@
 import { IoMdArrowDropright } from "react-icons/io";
 import Navbar from "../home/Navbar";
 import Right from "../home/Right";
-import Topbar from "../home/Topbar";
 
 export default function ViewService() {
   return (
     <>
       <div className=" w-full h-screen flex flex-col">
-        <Topbar />
-        <div className=" bg-[var(--gray)] w-full h-full flex  gap-8 px-8 py-8 ">
-          <Navbar />
+        <div className="w-full h-full flex  gap-8 px-8 py-8 ">
           <div className=" w-3/5 h-full flex flex-col  items-center gap-6 px-8 py-6 bg-[var(--white)] rounded-3xl ">
             <p className=" bgText text-4xl ">Demande d'acte de naissance</p>
             <div className=" w-full flex flex-col gap-4">

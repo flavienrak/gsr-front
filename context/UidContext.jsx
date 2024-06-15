@@ -47,6 +47,9 @@ export default function UidContextProvider({ children, socialInfos }) {
           dispatch(updatePersistInfos({ authToken: res.authToken }));
         } else if (res?.userNotFound) {
           toast.error("Adresse email non enregistre", toastStyle);
+          if (protectedPaths.includes(path)) {
+            push("/auth?path=login");
+          }
         }
       })();
     }

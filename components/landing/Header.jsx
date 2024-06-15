@@ -6,40 +6,7 @@ export default function Header() {
   return (
     <>
       <div className=" relative w-full h-screen flex justify-center bg-[var(--bg)] text-[var(--white)] overflow-hidden p-10">
-        <div className="h-full flex flex-col gap-10 z-20 w-5/6">
-          <div className="flex justify-between px-10 bg-[var(--bg-1)] h-16 items-center rounded-sm">
-            <div className="">
-              <label className="font-extrabold text-[var(--cont)]">
-                <span className="text-2xl">L.</span>
-              </label>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link
-                href={{
-                  pathname: "/auth",
-                  query: {
-                    path: "login",
-                  },
-                }}
-                className="rounded-full w-24 flex justify-center items-center h-8"
-              >
-                <span className="text-[var(--cont)] text-sm">Se connecter</span>
-              </Link>
-              <Link
-                href={{
-                  pathname: "/auth",
-                  query: {
-                    path: "register",
-                  },
-                }}
-                className="border border-[var(--primary-color)] rounded-full w-24 flex justify-center items-center h-8"
-              >
-                <span className="text-[var(--primary-color)] text-sm">
-                  S{"'"}inscrire
-                </span>
-              </Link>
-            </div>
-          </div>
+        <div className="h-full flex flex-col items-center justify-center gap-10 z-20 w-5/6">
           <div className="w-full flex items-center flex-col justify-center gap-10">
             <h1 className={`font-extrabold text-8xl bgText text-center`}>
               Decouvrir <br />
@@ -49,9 +16,7 @@ export default function Header() {
               </span>{" "}
             </h1>
             <p className=" text-center text-[var(--cont)] font-light opacity-70 text-lg">
-              Create betterLinkedin content ,schedule your posts at the right
-              time. <br />
-              bulid new relationships and monitor all your results
+              Accéeder facilement à vos
             </p>
             <div className=" flex items-center justify-center gap-6">
               <button className="bgGradient border border-[var(--primary-color)] rounded-full px-8 h-12 flex justify-center items-center text-[var(--bg)]">
