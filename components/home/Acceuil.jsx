@@ -21,8 +21,10 @@ export default function Acceuil() {
 
       {/* <EditProfil /> */}
       {/* <ViewService /> */}
-      {/* <NotificationOrg /> */}
-      <div className=" p-10 w-full h-full bg-[var(--white)] flex flex-col gap-8 rounded-md ">
+      <NotificationOrg />
+      {/* <Profil /> */}
+
+      {/* <div className=" p-10 w-full h-full bg-[var(--white)] flex flex-col gap-8 rounded-md ">
         <div className=" flex flex-col gap-2">
           <p className="text-4xl font-bold">Service disponibles</p>
           <p>Les services disponibles dans notre plateforme </p>
@@ -62,7 +64,7 @@ export default function Acceuil() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

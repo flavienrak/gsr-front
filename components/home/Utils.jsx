@@ -11,7 +11,7 @@ import { BsArrowRight } from "react-icons/bs";
 export function PrimaryBouton({ label, fullWidth, fontBig }) {
   return (
     <button
-      className={`text-[var(--white)] h-full rounded-md py-2 px-8 bg-[var(--primary-color)] font-semibold ${
+      className={`text-[var(--white)] h-full rounded-md py-2 px-16 bg-[var(--primary-color)] font-semibold ${
         fullWidth ? "w-full" : ""
       } ${fontBig ? "" : "text-sm"}`}
     >
@@ -206,10 +206,6 @@ export function CardAccueilDemande({
             <p>{organisme}</p>
           </div>
         </div>
-        <button className="  flex items-center gap-4  text-[var(--primary-color)] ">
-          <p>Consulter</p>
-          <BsArrowRight />
-        </button>
       </div>
     </div>
   );

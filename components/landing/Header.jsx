@@ -16,7 +16,7 @@ export default function Header() {
               </span>{" "}
             </h1>
             <p className=" text-center text-[var(--cont)] font-light opacity-70 text-lg">
-              Accéeder facilement à vos
+              Accéeder facilement à vos services publics .
             </p>
             <div className=" flex items-center justify-center gap-6">
               <button className="bgGradient border border-[var(--primary-color)] rounded-full px-8 h-12 flex justify-center items-center text-[var(--bg)]">

@@ -69,23 +69,21 @@ export function PetitCardLanding({ icon, titre, desc }) {
   );
 }
 
-export function MiniCard({ titre, work, person, color }) {
+export function MiniCard({ titre, work, person, color, source }) {
   return (
     <div
-      className={` flex items-center flex-col gap-8 rounded-xl  shadow-sm relative py-8 px-4 min-w-[23rem] bg-white overflow-hidden`}
+      className={` flex items-center flex-col gap-2 rounded-xl  shadow-sm relative  bg-white overflow-hidden`}
     >
-      {/* <div className={` absolute shadow${color}1`}></div>
-      <div className={` absolute shadow${color}2`}></div> */}
-      <p className={`text-2xl uppercase text-[var(--${color})]`}>{titre}</p>
-
-      <div className=" relative w-[20rem] h-[14rem]  rounded-md overflow-hidden ">
-        <Image src={"/images/img.jpg"} alt="" fill objectFit="cover" />
+      <div className=" relative w-[23rem] h-[14rem]  ">
+        <Image src={source} alt="" fill objectFit="cover" />
       </div>
-
-      <div className=" flex flex-col items-center gap-1">
-        <p className={`text-3xl  text-[var(--${color})]`}>{work}</p>
-        <p className=" text-xl text-slate-300">{person}</p>
+      <div className=" w-full flex flex-col gap-1 items-center justify-center">
+        <p className={`text-3xl uppercase text-[var(--primary-color)]`}>
+          {titre}
+        </p>
+        <p className={`text-2xl  text-[var(--gray-text)]`}>{person}</p>
       </div>
+      <p className=" max-w-[23rem] px-6 pb-4 ">{work} </p>
     </div>
   );
 }
